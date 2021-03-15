@@ -13,7 +13,7 @@ import com.ossovita.artbooktesting.R
 import com.ossovita.artbooktesting.model.Art
 import javax.inject.Inject
 
-class ImageRecyclerAdapter @Inject constructor(
+class   ImageRecyclerAdapter @Inject constructor(
     val glide : RequestManager
 ) : RecyclerView.Adapter<ImageRecyclerAdapter.ImageViewHolder>() {
     class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

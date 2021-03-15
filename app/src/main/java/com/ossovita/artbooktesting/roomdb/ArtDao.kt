@@ -7,7 +7,7 @@ import com.ossovita.artbooktesting.model.Art
 @Dao
 interface ArtDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)// aynı id'den veriler yazarken conflict durumunda yer değiştir diyoruz
-    suspend fun insertArt(arts:Art):List<Long>
+    suspend fun insertArt(arts:Art)
 
     @Delete
     suspend fun deleteArt(art:Art)
