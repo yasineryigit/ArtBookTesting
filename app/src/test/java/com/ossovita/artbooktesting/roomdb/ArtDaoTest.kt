@@ -12,21 +12,32 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import javax.inject.Inject
+import javax.inject.Named
 
 @SmallTest
 @ExperimentalCoroutinesApi
+
 class ArtDaoTest {
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
-    private lateinit var database: ArtDatabase
+
+    @get:Rule
+    //var hiltRule=HiltAndroid
+
+    @Inject
+    @Named("testDatabase")
+    lateinit var database: ArtDatabase
+
     private lateinit var dao:ArtDao
 
     @Before
-    fun setup(){
+    fun setup(){/*
         database= Room.inMemoryDatabaseBuilder(
             ApplicationProvider.getApplicationContext(),ArtDatabase::class.java
-        ).allowMainThreadQueries().build()
+        ).allowMainThreadQueries().build()*/
+
         dao = database.artDao()
     }
 
